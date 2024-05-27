@@ -1,7 +1,6 @@
 # Aliases :
 alias lg="git log --all  --decorate --oneline --graph"
 alias open="xdg-open"
-alias cours="cd ~/Desktop/cours/"
 
 # Need wireguard to work
 alias wgup="sudo wg-quick up wg0"
