@@ -3,7 +3,7 @@
 - [Bitwarden](https://bitwarden.com/download/)
 - Brave -> in ubuntu software
 - [VSCode](https://code.visualstudio.com/)
-- Guake -> `sudo apt install guake`
+- Guake -> `sudo apt install guake` Then `guake --restore-preferences ~/Downloads/guake_prefs`
 
 # Todos
 
