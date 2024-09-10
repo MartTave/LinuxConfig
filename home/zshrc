@@ -1,3 +1,4 @@
+# You can add this at the end of the .zshrc file
 # Aliases :
 alias lg="git log --all  --decorate --oneline --graph"
 alias open="xdg-open"
