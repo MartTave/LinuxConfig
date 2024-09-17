@@ -2,9 +2,13 @@
 abbreviate-tab-names=false
 compat-delete='delete-sequence'
 display-n=0
+display-tab-names=0
 gtk-prefer-dark-theme=true
 gtk-theme-name='Adwaita'
+gtk-use-system-default-theme=true
+hide-tabs-if-one-tab=false
 history-size=1000
+load-guake-yml=true
 max-tab-name-length=100
 mouse-display=true
 open-tab-cwd=true
@@ -19,13 +23,16 @@ start-at-login=true
 use-default-font=false
 use-popup=false
 use-scrollbar=true
-use-trayicon=true
+use-trayicon=false
 window-halignment=0
-window-height=50
+window-height=48
 window-losefocus=true
 window-refocus=false
 window-tabbar=false
 window-width=100
+
+[style]
+cursor-blink-mode=2
 
 [style/background]
 transparency=75

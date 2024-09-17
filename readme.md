@@ -58,6 +58,8 @@ Super fast folder navigator -> keep in track folder you cd'ed into ([here](https
 
 `brew install z`
 
+Once you've done this, you need to add this `. /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh` to your `.zshrc`
+
 ### BTOP
 
 fancy system monitor -> ([here](https://formulae.brew.sh/formula/btop))
@@ -76,9 +78,7 @@ Repo to install -> [rmview](https://github.com/bordaigorl/rmview) -> work only u
 
 ### Miniconda
 
-You can install miniconda -> a environment manager for python
-
-(here)[]
+You can install miniconda -> a environment manager for python [here](https://docs.anaconda.com/miniconda/)
 
 Or with ```
     mkdir -p ~/miniconda3
