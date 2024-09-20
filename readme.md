@@ -95,3 +95,7 @@ Then initialize it with `~/miniconda3/bin/conda init zsh`
 ## Getting * on password input :
 
 `sudo visudo` -> then modify line from `Defaults env_reset` to `Defaults env_reset,pwfeedback `
+
+### ULauncher
+
+Very cool app launcher. MacOs style [here](https://ulauncher.io/)
