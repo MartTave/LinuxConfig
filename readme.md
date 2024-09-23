@@ -99,3 +99,9 @@ Then initialize it with `~/miniconda3/bin/conda init zsh`
 ### ULauncher
 
 Very cool app launcher. MacOs style [here](https://ulauncher.io/)
+
+### TMUX
+
+Terminal manager (pretty cool eh)
+
+With `sudo apt install tmux`
