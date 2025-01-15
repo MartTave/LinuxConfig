@@ -1,0 +1,26 @@
+
+
+
+window#waybar {
+    color: white;
+}
+
+/* Connection module */
+
+.module {
+    border-color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Module Network/Bluetooth */
+
+
+#workspaces button.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+#workspaces button {
+    color: lightgray;
+}

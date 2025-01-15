@@ -1,0 +1,69 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "pulseaudio"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["memory", "cpu", "temperature", "network", "bluetooth", "battery", "clock"],
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": {
+            "charging": ["⚡", "", "", "", "", "", ""],
+            "default": ["", "", "", "", "", "", "", "", "", ""]
+        },
+        "states": {
+            "normal": 100,
+            "warning": 50,
+            "critical": 20
+        },
+        "tooltip-format": "{timeTo}\nSitting at : {capacity}%\nDrawing : {power}W"
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "hyprland/workspaces": {
+        "format" : "{name}"
+    },
+    "height": 40,
+    "reload_style_on_change": true,
+    "memory": {
+      "format": "{}% "
+    },
+    "cpu": {
+      "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+      //"format": " {icon}",
+      "interval": 1,
+    //   "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+      "format-icons": [
+          "<span color='#a6e3a1'>▁</span>", // green
+          "<span color='#89b4fa'>▂</span>", // blue
+          "<span color='#f8f8f2'>▃</span>", // white
+          "<span color='#f8f8f2'>▄</span>", // white
+          "<span color='#f9e2af'>▅</span>", // yellow
+          "<span color='#f9e2af'>▆</span>", // yellow
+          "<span color='#ff9977'>▇</span>", // orange
+          "<span color='#f38ba8'>█</span>"  // red
+     ]
+    },
+    "pulseaudio": {
+        "format-muted": "-- % ",
+        "format": "{volume}% {icon}",
+        "format-icons": {
+            "default": ["", ""]
+        },
+        "format-bluetooth": "{volume}% ",
+        "scroll-step": 1,
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
+        "on-click": "~/.config/waybar/script.sh --toggle"
+    },
+    "temperature": { 
+        "thermal-zone": 3,
+        "format": " {temperatureC} °C",
+        "critical-threshold": 90,
+        "tooltip": false
+    },
+    "network": {
+        "format": "{ifname} ",
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-disconnected": ""
+    }
+}

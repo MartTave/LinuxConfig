@@ -1,0 +1,114 @@
+@import url('./dark.css');
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: unset;
+    font-weight: bold;
+}
+
+window.DP-1 * {
+    font-size: 18px;
+}
+
+.module {
+    margin-top: 5px;
+}
+
+
+#network {
+    padding: 0 10px 0 10px;
+    margin-left: 8px;
+    border-radius: 10px 0 0 10px;
+}
+#bluetooth {
+    margin-right: 8px;
+    padding: 0 10px 0 10px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-radius: 0 10px 10px 0;
+}
+
+
+/* Module CPU/MEM  */
+#memory {
+    padding: 0 10px 0 10px;
+    margin-left: 8px;
+    border-radius: 10px 0 0 10px;
+}
+#cpu {
+    padding: 0 10px 0 10px;
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+#temperature {
+    margin-right: 8px;
+    padding: 0 10px 0 10px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-radius: 0 10px 10px 0;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+/* Module Battery/Clock */
+#battery {
+    padding: 0 10px 0 10px;
+    margin-left: 8px;
+    border-radius: 10px 0 0 10px;
+}
+
+#battery.normal {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #f9e2af;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#clock {
+    margin-right: 8px;
+    padding: 0 10px 0 10px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Window in the center */
+#window {
+    padding: 0 25px;
+    border-radius: 10px;
+}
+
+
+/* Workspaces on the left */
+#workspaces {
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+.modules-left {
+    margin-left: 8px;
+}
+
+#workspaces button {
+    transition: background-color 0.5s, color 0.3s;
+}
+
+/* Audio */
+
+#pulseaudio {
+    margin-left: 8px;
+    border-radius: 10px;
+    padding: 0 8px;
+}
