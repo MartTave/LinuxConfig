@@ -1,69 +1,87 @@
-{
+// Written by Nicholas Oliver Bahary
+// on 14 September 2024
+[
+  {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "pulseaudio"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["memory", "cpu", "temperature", "network", "bluetooth", "battery", "clock"],
-    "battery": {
-        "format": "{icon} {capacity}%",
-        "format-icons": {
-            "charging": ["⚡", "", "", "", "", "", ""],
-            "default": ["", "", "", "", "", "", "", "", "", ""]
-        },
-        "states": {
-            "normal": 100,
-            "warning": 50,
-            "critical": 20
-        },
-        "tooltip-format": "{timeTo}\nSitting at : {capacity}%\nDrawing : {power}W"
-    },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+    "position": "top",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 4,
+    "margin-right": 4,
+    "modules-left": ["custom/rofi", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+      "memory",
+      "backlight",
+      "pulseaudio",
+      "battery"
+    ],
+    "custom/rofi": {
+      "format": "\udb82\udcc7"
     },
     "hyprland/workspaces": {
-        "format" : "{name}"
+      "all-outputs": true,
+      "format": "{name}",
+      "sort-by-number": true,
+      "active-only": false
     },
-    "height": 40,
-    "reload_style_on_change": true,
+    "hyprland/window": {
+      "format": "{title}",
+      "separate-outputs": true,
+      "rewrite": {
+        "(.*) — Mozilla Firefox": "󰈹  $1",
+        "(.*) - Visual Studio Code": "󰨞  $1",
+      }
+    },
+    "clock": {
+      "format": "  {:%a %e %b %H:%M}",
+      "tooltip-format": "<tt>{calendar}</tt>",
+      "calendar": {
+        "mode": "month",
+        "format": {
+          "months": "<span color='#cdd6f4'><b>{}</b></span>",
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
+          "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
+          "today": "<span color='#f38ba8'><b>{}</b></span>"
+        }
+      }
+    },
     "memory": {
-      "format": "{}% "
+      "interval": 30,
+      "format": " Mem {used}GiB",
+      "max-length": 13,
+      "tooltip": false
     },
-    "cpu": {
-      "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
-      //"format": " {icon}",
-      "interval": 1,
-    //   "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-      "format-icons": [
-          "<span color='#a6e3a1'>▁</span>", // green
-          "<span color='#89b4fa'>▂</span>", // blue
-          "<span color='#f8f8f2'>▃</span>", // white
-          "<span color='#f8f8f2'>▄</span>", // white
-          "<span color='#f9e2af'>▅</span>", // yellow
-          "<span color='#f9e2af'>▆</span>", // yellow
-          "<span color='#ff9977'>▇</span>", // orange
-          "<span color='#f38ba8'>█</span>"  // red
-     ]
+    "backlight": {
+      "format": "{icon} <b>{percent}%</b>",
+      "format-icons": ["󰃞", "󰃟", "󰃠"],
+      "tooltip": false
     },
     "pulseaudio": {
-        "format-muted": "-- % ",
-        "format": "{volume}% {icon}",
-        "format-icons": {
-            "default": ["", ""]
-        },
-        "format-bluetooth": "{volume}% ",
-        "scroll-step": 1,
-        "on-scroll-up": "pamixer -i 1",
-        "on-scroll-down": "pamixer -d 1",
-        "on-click": "~/.config/waybar/script.sh --toggle"
+      "format": "{icon} <b>{volume}%</b>",
+      "format-muted": " 󰝟 ",
+      "format-bluetooth": "{icon}  <b>{volume}%</b>",
+      "format-bluetooth-muted": "󰝟 ",
+      "format-icons": {
+        "headset": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "tooltip": true,
+      "on-click": "pavucontrol"
     },
-    "temperature": { 
-        "thermal-zone": 3,
-        "format": " {temperatureC} °C",
-        "critical-threshold": 90,
-        "tooltip": false
-    },
-    "network": {
-        "format": "{ifname} ",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-disconnected": ""
+    "battery": {
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-icons": ["", "", "", "", ""],
+      "max-length": 25,
+      "tooltip": true,
+      "interval": 5,
+      "states": {
+        "good": 70,
+        "warning": 30,
+        "critical": 15
+      }
     }
-}
+  }
+]
