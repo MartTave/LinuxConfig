@@ -105,3 +105,8 @@ Very cool app launcher. MacOs style [here](https://ulauncher.io/)
 Terminal manager (pretty cool eh)
 
 With `sudo apt install tmux`
+
+
+# To install :
+
+https://github.com/junegunn/fzf
