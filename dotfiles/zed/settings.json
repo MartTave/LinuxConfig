@@ -1,0 +1,102 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
+  "autosave": "on_focus_change",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "vim_mode": false,
+  "assistant": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "ui_font_size": 18,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "hide_mouse": "never",
+  "soft_wrap": "editor_width",
+  "lsp": {
+    "tinymist": {
+      "settings": {
+        "exportPdf": "onSave",
+        // "rootPath": "-",
+        // "outputPath": "$root/$name",
+        "outputPath": "$root/$dir/$name",
+        "formatterMode": "typstyle"
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 80,
+          "lint": {
+            "select": ["D", "DOC", "ANN", "N", "B", "F"],
+            "ignore": [
+              "D100",
+              "D105",
+              "D106",
+              "D107",
+              "D212",
+              "D400",
+              "D415",
+              "ANN204"
+            ],
+            "extendSelect": ["I"]
+          },
+          "pydocstyle": {
+            "convention": "google"
+          },
+          "perFileIgnores": {
+            "tests/**/*.py": ["D", "ANN"]
+          }
+        }
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "pyright"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    },
+    "Typst": {
+      "show_edit_predictions": true,
+      "language_servers": ["tinymist"],
+      "format_on_save": "on"
+    }
+  }
+}
