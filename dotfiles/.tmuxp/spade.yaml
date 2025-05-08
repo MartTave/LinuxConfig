@@ -1,0 +1,13 @@
+session_name: spade
+windows:
+  - window_name: server
+    layout: tiled
+    panes:
+      - shell_command:
+        - cd ~/projects/AB2camera && clear
+      - shell_command:
+        - cd ~/projects/CalibrationAgent && clear
+      - shell_command:
+        - cd ~/projects/LAB2sc/prosody && clear
+  - window_name: pi
+    start_directory: ~/projects/AB2agent
