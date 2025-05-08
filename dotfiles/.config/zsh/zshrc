@@ -1,0 +1,57 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
+source "$HOME/.config/zsh/env.zsh"
+
+. "$HOME/.local/bin/env"
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=5000
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+bindkey '^[[3~' delete-char
+
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+autoload -U compinit && compinit
+# source ~/.fzf-tab/fzf-tab.plugin.zsh
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+if [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
+  # Graphical terminal (GUI)
+  [[ -f ~/.config/zsh/p10k.gui.zsh ]] && source /home/marttave/.config/zsh/p10k.gui.zsh
+else
+  # TTY
+  [[ -f ~/.config/zsh/p10k.tty.zsh ]] && source /home/marttave/.config/zsh/p10k.tty.zsh
+fi
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# Aliases
+alias lg="git log --all  --decorate --oneline --graph"
+alias open="xdg-open"
+alias zed="zeditor"
+alias ls='ls --color'
+alias s="kitten ssh"
