@@ -24,7 +24,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet-thought"
+      "model": "claude-3-7-sonnet"
     },
     "version": "2"
   },
