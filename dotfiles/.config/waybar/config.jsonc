@@ -2,6 +2,7 @@
 // on 14 September 2024
 [
   {
+    "reload_style_on_change": false,
     "layer": "top",
     "position": "top",
     "margin-top": 0,
@@ -11,27 +12,28 @@
     "modules-left": ["custom/rofi", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": [
+      "network",
+      "cpu",
       "memory",
       "backlight",
       "pulseaudio",
-      "battery"
+      "battery",
     ],
     "custom/rofi": {
-      "format": "\udb82\udcc7"
+      "format": "\udb82\udcc7",
     },
     "hyprland/workspaces": {
       "all-outputs": true,
       "format": "{name}",
       "sort-by-number": true,
-      "active-only": false
+      "active-only": false,
     },
     "hyprland/window": {
       "format": "{title}",
       "separate-outputs": true,
       "rewrite": {
         "(.*) — Mozilla Firefox": "󰈹  $1",
-        "(.*) - Visual Studio Code": "󰨞  $1",
-      }
+      },
     },
     "clock": {
       "format": "  {:%a %e %b %H:%M}",
@@ -43,20 +45,33 @@
           "days": "<span color='#cdd6f4'><b>{}</b></span>",
           "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
           "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
-          "today": "<span color='#f38ba8'><b>{}</b></span>"
-        }
-      }
+          "today": "<span color='#f38ba8'><b>{}</b></span>",
+        },
+      },
+    },
+    "network": {
+      "format-wifi": "󰤨",
+      "format-ethernet": "󰈀",
+      "format-disconnected": "󰤭",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+      "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+      "tooltip-format-disconnected": "Disconnected",
+    },
+    "cpu": {
+      "interval": 1,
+      "format": "󰘚   {usage}%",
+      "tooltip": true,
     },
     "memory": {
       "interval": 30,
-      "format": " Mem {used}GiB",
+      "format": "   Mem {used}GiB",
       "max-length": 13,
-      "tooltip": false
+      "tooltip": false,
     },
     "backlight": {
       "format": "{icon} <b>{percent}%</b>",
       "format-icons": ["󰃞", "󰃟", "󰃠"],
-      "tooltip": false
+      "tooltip": false,
     },
     "pulseaudio": {
       "format": "{icon} <b>{volume}%</b>",
@@ -65,10 +80,10 @@
       "format-bluetooth-muted": "󰝟 ",
       "format-icons": {
         "headset": "",
-        "default": ["󰕿", "󰖀", "󰕾"]
+        "default": ["󰕿", "󰖀", "󰕾"],
       },
       "tooltip": true,
-      "on-click": "pavucontrol"
+      "on-click": "pavucontrol",
     },
     "battery": {
       "format": "{icon} {capacity}%",
@@ -80,8 +95,8 @@
       "states": {
         "good": 70,
         "warning": 30,
-        "critical": 15
-      }
-    }
-  }
+        "critical": 15,
+      },
+    },
+  },
 ]

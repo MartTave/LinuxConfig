@@ -7,8 +7,6 @@
 
 source "$HOME/.config/zsh/env.zsh"
 
-. "$HOME/.local/bin/env"
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=5000
