@@ -21,10 +21,11 @@
   },
   "vim_mode": false,
   "assistant": {
-    "default_profile": "write",
+    "single_file_review": true,
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "model": "gpt-4o"
     },
     "version": "2"
   },

@@ -82,3 +82,5 @@ alias open="xdg-open"
 alias zed="zeditor"
 alias ls='ls --color'
 alias s="kitten ssh"
+
+eval "$(zoxide init zsh)"
