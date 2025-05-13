@@ -2,21 +2,23 @@
 // on 14 September 2024
 [
   {
-    "reload_style_on_change": false,
+    "reload_style_on_change": true,
     "layer": "top",
     "position": "top",
     "margin-top": 0,
     "margin-bottom": 0,
     "margin-left": 4,
     "margin-right": 4,
+    "space": 10,
     "modules-left": ["custom/rofi", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": [
       "network",
+      "bluetooth",
       "cpu",
       "memory",
-      "backlight",
       "pulseaudio",
+      "backlight",
       "battery",
     ],
     "custom/rofi": {
@@ -34,6 +36,16 @@
       "rewrite": {
         "(.*) — Mozilla Firefox": "󰈹  $1",
       },
+    },
+    "bluetooth": {
+      "format-on": "<span class=\"icon\"></span",
+      "format-disabled": "󰂲  ",
+      "format-off": "󰂲  ",
+      "format-connected": "󰂱  ",
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     },
     "clock": {
       "format": "  {:%a %e %b %H:%M}",
@@ -59,14 +71,15 @@
     },
     "cpu": {
       "interval": 1,
-      "format": "󰘚   {usage}%",
+      "format": "󰘚 {usage}%",
       "tooltip": true,
+      "min-length": 6,
     },
     "memory": {
       "interval": 30,
-      "format": "   Mem {used}GiB",
-      "max-length": 13,
+      "format": "  Mem {used}GiB",
       "tooltip": false,
+      "min-length": 14,
     },
     "backlight": {
       "format": "{icon} <b>{percent}%</b>",
@@ -84,9 +97,10 @@
       },
       "tooltip": true,
       "on-click": "pavucontrol",
+      "min-length": 6,
     },
     "battery": {
-      "format": "{icon} {capacity}%",
+      "format": "{icon}  {capacity}%",
       "format-charging": " {capacity}%",
       "format-icons": ["", "", "", "", ""],
       "max-length": 25,

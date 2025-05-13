@@ -77,11 +77,41 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-#memory {
-    color: #fab387;
-    margin-right: 20px;
+#bluetooth {
+    color: #74c7ec;
+    margin-right: 10pt;
+}
+#bluetooth.connected {
+    color: #a6e3a1;
+}
+#bluetooth.inactive {
+    color: #f38ba8;
 }
 
+#memory {
+    color: #fab387;
+    margin-right: 10px;
+}
+
+#battery.full,
+#battery.good,
+#battery.charging,
+#battery.plugged {
+    color: #a6e3a1;
+}
+
+#battery {
+    margin-right: 10px;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 @keyframes blink {
     to {
         background-color: rgba(30, 34, 42, 0.5);
@@ -89,11 +119,21 @@
     }
 }
 
+#backlight {
+    color: #cba6f7;
+    margin-right: 10pt;
+}
+
+#pulseaudio {
+    color: #74c7ec;
+    margin-right: 10pt;
+}
+
 * {
     margin: 0;
     padding: 0;
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 9pt;
+    font-family: "Agave Nerd Font";
+    font-size: 12pt;
     font-weight: 800;
     transition-property: background;
     transition-duration: 0.5s;
