@@ -13,15 +13,31 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTDUP=erase
 setopt appendhistory
-setopt sharehistory
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 
+bindkey -e
+
+# Home / End keys
+bindkey '\e[H' beginning-of-line      # Home
+bindkey '\e[F' end-of-line            # End
+
+# Delete key
+bindkey '\e[3~' delete-char           # Delete under cursor
+
+# Ctrl + Left/Right to move by word
+bindkey '^[[1;5C' forward-word        # Ctrl+Right
+bindkey '^[[1;5D' backward-word       # Ctrl+Left
+
+# Ctrl + Backspace and Ctrl + Delete to delete word
+bindkey '^H' backward-kill-word       # Ctrl+Backspace (may already work)
+bindkey '^[[3;5~' kill-word           # Ctrl+Delete
+
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
-bindkey '^[[3~' delete-char
+
 
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -40,6 +56,19 @@ else
   # TTY
   [[ -f ~/.config/zsh/p10k.tty.zsh ]] && source /home/marttave/.config/zsh/p10k.tty.zsh
 fi
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+export PATH=/opt/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
+
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
