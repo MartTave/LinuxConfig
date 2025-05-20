@@ -10,6 +10,11 @@
     padding: 2pt;
 }
 
+#custom-internet {
+    color: lightgray;
+    font-weight: bold;
+}
+
 #custom-rofi {
     margin-left: 7pt;
     padding-right: 3pt;
@@ -56,18 +61,16 @@
 }
 
 #cpu {
-    color: #89dceb;
-    margin-right: 25px;
+    color: lightgray;
 }
 
 #network {
-    color: #a6e3a1;
-    margin-right: 25px;
+    color: lightgray;
     font-size: 13pt;
 }
 
 #network.disconnected {
-    color: #f38ba8;
+    color: #9399b2;
 }
 
 #network-tooltip {
@@ -78,19 +81,17 @@
 }
 
 #bluetooth {
-    color: #74c7ec;
-    margin-right: 10pt;
+    color: lightgray;
 }
 #bluetooth.connected {
-    color: #a6e3a1;
+    color: lightgray;
 }
 #bluetooth.inactive {
-    color: #f38ba8;
+    color: #9399b2;
 }
 
 #memory {
-    color: #fab387;
-    margin-right: 10px;
+    color: lightgray;
 }
 
 #battery.full,
@@ -98,10 +99,6 @@
 #battery.charging,
 #battery.plugged {
     color: #a6e3a1;
-}
-
-#battery {
-    margin-right: 10px;
 }
 
 #battery.critical:not(.charging) {
@@ -120,13 +117,14 @@
 }
 
 #backlight {
-    color: #cba6f7;
-    margin-right: 10pt;
+    color: lightgray;
 }
 
 #pulseaudio {
-    color: #74c7ec;
-    margin-right: 10pt;
+    color: lightgray;
+}
+#pulseaudio.muted {
+    color: #9399b2;
 }
 
 * {

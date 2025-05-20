@@ -13,14 +13,15 @@
       "proxy": null,
       "proxy_no_verify": null
     },
-    "enabled_in_assistant": false
+    "enabled_in_text_threads": false
   },
   "autosave": "on_focus_change",
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "vim_mode": false,
-  "assistant": {
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "agent": {
     "single_file_review": true,
     "default_profile": "ask",
     "default_model": {
