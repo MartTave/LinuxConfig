@@ -83,4 +83,6 @@ alias zed="zeditor"
 alias ls='ls --color'
 alias s="kitten ssh"
 
+export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
+
 eval "$(zoxide init zsh)"

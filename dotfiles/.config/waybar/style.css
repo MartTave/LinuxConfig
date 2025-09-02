@@ -98,7 +98,7 @@
 #battery.good,
 #battery.charging,
 #battery.plugged {
-    color: #a6e3a1;
+    color: lightgray;
 }
 
 #battery.critical:not(.charging) {

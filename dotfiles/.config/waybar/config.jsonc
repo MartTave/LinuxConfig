@@ -63,7 +63,7 @@
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
       "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
       "min-length": 3,
-      "on-click": "kitty -e bluetoothctl",
+      "on-click": "kitty -e bluetui",
     },
     "clock": {
       "format": "  {:%a %e %b %H:%M}",
@@ -106,7 +106,7 @@
     },
     "memory": {
       "interval": 30,
-      "format": "  Mem {used}GiB",
+      "format": "  {used} GiB",
       "tooltip": true,
       "min-length": 14,
     },
@@ -128,7 +128,7 @@
       },
       "tooltip": true,
       "tooltip-format": "{volume}%",
-      "on-click": "pactl set-sink-mute 55 toggle",
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
       "min-length": 3,
     },
     "battery": {
