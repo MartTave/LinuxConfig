@@ -40,15 +40,6 @@
   "hide_mouse": "never",
   "soft_wrap": "editor_width",
   "lsp": {
-    "tinymist": {
-      "settings": {
-        "exportPdf": "onSave",
-        // "rootPath": "-",
-        // "outputPath": "$root/$name",
-        "outputPath": "$root/$dir/$name",
-        "formatterMode": "typstyle"
-      }
-    },
     "ruff": {
       "initialization_options": {
         "settings": {
@@ -56,22 +47,19 @@
           "lint": {
             "select": ["D", "DOC", "ANN", "N", "B", "F"],
             "ignore": [
-              "D100",
-              "D105",
-              "D106",
-              "D107",
-              "D212",
-              "D400",
-              "D415",
-              "ANN204"
+              // "D100",
+              // "D105",
+              // "D106",
+              // "D107",
+              // "D212",
+              // "D400",
+              // "D415",
+              // "ANN204"
             ],
             "extendSelect": ["I"]
           },
           "pydocstyle": {
             "convention": "google"
-          },
-          "perFileIgnores": {
-            "tests/**/*.py": ["D", "ANN"]
           }
         }
       }
@@ -94,11 +82,6 @@
           }
         }
       ]
-    },
-    "Typst": {
-      "show_edit_predictions": true,
-      "language_servers": ["tinymist"],
-      "format_on_save": "on"
     }
   }
 }

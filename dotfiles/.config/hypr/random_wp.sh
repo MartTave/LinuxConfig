@@ -1,8 +1,12 @@
 #!/bin/bash
-for mon in $(hyprctl monitors | grep Monitor | awk '{print $2 }'); do
 
-wp=`hyprctl hyprpaper listloaded | shuf -n 1`
-echo $wp
-hyprctl hyprpaper wallpaper "$mon,$wp"
+WALLPAPER_DIR="$HOME/.config/hypr/wallpapers/"
+CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 
-done
+# Get a random wallpaper that is not the current one
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
+
+echo Done for $WALLPAPER
+
+# Apply the selected wallpaper
+hyprctl hyprpaper reload ,"$WALLPAPER"
