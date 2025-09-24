@@ -13,9 +13,10 @@
   "edit_predictions": {
     "mode": "subtle"
   },
+  "tab_size": 2,
   "autosave": "on_focus_change",
-  "ui_font_size": 16,
-  "buffer_font_size": 14,
+  "ui_font_size": 21,
+  "buffer_font_size": 17,
   "theme": {
     "mode": "dark",
     "light": "One Light",
@@ -23,7 +24,6 @@
   },
   "hide_mouse": "never",
   "soft_wrap": "editor_width",
-  "diagnostics_max_severity": "off",
   "lsp": {
     "ruff": {
       "initialization_options": {
@@ -66,7 +66,8 @@
             "name": "ruff"
           }
         }
-      ]
+      ],
+      "tab_size": 4
     }
   }
 }

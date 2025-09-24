@@ -1,5 +1,3 @@
-// Written by Nicholas Oliver Bahary
-// on 14 September 2024
 [
   {
     "reload_style_on_change": true,
@@ -13,9 +11,8 @@
     "modules-left": ["custom/rofi", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": [
-      "custom/internet",
-      "network#ethernet",
-      "network#wifi",
+      "custom/sep1",
+      "network",
       "bluetooth",
       "custom/sep1",
       "cpu",
@@ -25,13 +22,6 @@
       "backlight",
       "battery",
     ],
-    "custom/internet": {
-      "exec": "~/.config/waybar/scripts/check_internet.sh",
-      "interval": 5,
-      "format": "{} ",
-      "return-type": "json",
-      "tooltip": true,
-    },
     "custom/rofi": {
       "format": "󰣇",
       "tooltip": false,
@@ -80,7 +70,6 @@
       },
     },
     "network#ethernet": {
-      "interface": "enp0s*",
       "format": "󰈁",
       "format-disconnected": "󰈂",
       "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
@@ -88,11 +77,11 @@
       "min-length": 3,
       "on-click": "kitty -e nmtui",
     },
-    "network#wifi": {
-      "interface": "wlp0s*",
-      "format": "{icon}",
+    "network": {
+      "format-wifi": "{icon}",
+      "format-ethernet": "󰈁",
       "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-      "format-disconnected": "󰤭",
+      "format-disconnected": "󰇨",
       "tooltip-format": "{essid} ({signalStrength}%)\n{ifname}: {ipaddr}/{cidr}",
       "tooltip-format-disconnected": "Disconnected",
       "min-length": 3,
