@@ -1,8 +1,14 @@
+hyprland
+hyprpaper
+waybar
+kanshi
 zoxide
 curl
 zsh
+zsh-theme-powerlevel10k 
 zsh-completions
 zsh-autosuggestions
+tlp
 zsh-syntax-highlighting
 zsh-theme-powerlevel10k-git
 zip

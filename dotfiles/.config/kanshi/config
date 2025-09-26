@@ -1,12 +1,18 @@
-output "AU Optronics 0xE8B3 Unknown"  {
-  mode 1920x1200@60
-  scale 1
+#output "AU Optronics 0xE8B3 Unknown"  {
+#  mode 1920x1200@60
+#  scale 1
+#  alias $INTERNAL
+#}
+
+output "Lenovo Group Limited 0x8AB1 Unknown" {
+  mode 3072x1920@60
+  scale 1.5 
   alias $INTERNAL
 }
 
 output "Dell Inc. DELL P2723QE 56M3914" {
   mode 1920x1080@60 
-  scale 1
+  scale 1 
   alias $WORK_RIGHT
 }
 
