@@ -1,0 +1,11 @@
+profile external {
+  output * {
+    position 0,0
+  }
+  output $INTERNAL {
+    disable
+  }
+  exec ~/.scripts/change_wacom_screen.sh eDP-1
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}

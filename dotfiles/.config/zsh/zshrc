@@ -6,6 +6,7 @@
 #fi
 
 source "$HOME/.config/zsh/env.zsh"
+source "$HOME/.config/zsh/nnn_preview_setup.zsh"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

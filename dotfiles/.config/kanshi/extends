@@ -1,0 +1,35 @@
+profile work_extends {
+  output $INTERNAL {
+    position 0,880
+  }
+  output $WORK_RIGHT {
+    position 2048,0
+  }
+  exec ~/.scripts/change_wacom_screen.sh "desc:Dell Inc. DELL P2723QE 55B6914"
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 "desc:Dell Inc. DELL P2723QE 55B6914"
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}
+
+profile home_extends {
+  output $INTERNAL {
+    position 696,1440
+  }
+  output $HOME {
+    position 0,0
+  }
+  exec ~/.scripts/change_wacom_screen.sh eDP-1
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 HDMI-A-1
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}
+
+profile random_extends {
+  output * {
+    position 2048,0
+  }
+  output $INTERNAL {
+    position 0,0
+  }
+  exec ~/.scripts/change_wacom_screen.sh eDP-1
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 DP-2
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}
