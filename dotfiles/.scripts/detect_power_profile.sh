@@ -1,9 +1,9 @@
 res=$(tlp-stat -m)
 
 if [[ "$res" == battery* ]]; then
-  echo " "
+  echo ""
 elif [[ "$res" == AC* ]]; then
-  echo "󱐋 "
+  echo "󱐋"
 else
-  echo " "
+  echo ""
 fi
