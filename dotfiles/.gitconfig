@@ -1,7 +1,16 @@
 [user]
 	email = 55973969+MartTave@users.noreply.github.com
 	name = MartTave
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEMWYgn8ywLGWXDqBn1vXbLFhyBL4IdgQqEkc1DFo4ef
 [core]
 	editor = vim
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/marttave/.ssh/allowed_signers

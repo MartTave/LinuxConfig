@@ -1,6 +1,6 @@
 #waybar.top {
   background: none;
-  color: white;
+  color: lightgray;
 }
 #waybar.top > box.horizontal {
   background: #11111b;
@@ -12,13 +12,17 @@
 }
 
 #battery {
-  margin-right: 10px;
+  margin-right: 16px;
   margin-left: -8px;
 }
 
 #custom-rofi {
   margin-left: 7pt;
   font-size: 12pt;
+}
+
+#custom-tlp {
+  color: lightgray;
 }
 
 #workspaces button {
@@ -91,10 +95,7 @@
   color: lightgray;
 }
 
-#battery.full,
-#battery.good,
-#battery.charging,
-#battery.plugged {
+#battery {
   color: lightgray;
 }
 
@@ -109,7 +110,7 @@
 @keyframes blink {
   to {
     background-color: rgba(30, 34, 42, 0.5);
-    color: #cdd6f4;
+    color: lightgray;
   }
 }
 

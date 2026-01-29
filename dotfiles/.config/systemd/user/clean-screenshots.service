@@ -1,0 +1,6 @@
+[Unit]
+Description=Clean up old screenshots
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/find %h/Screenshots -type f -mtime +7 -delete

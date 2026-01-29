@@ -10,12 +10,33 @@ profile work_extends {
   exec sleep 2 && ~/.scripts/random_wp.sh
 }
 
+profile third_extends {
+  output $INTERNAL {
+    position 696,1440
+  }
+  output $THIRD_ROOM {
+    position 0,0
+  }
+  exec ~/.scripts/change_wacom_screen.sh eDP-1
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 "desc:Dell Inc. DELL S3425DW"
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}
+
 profile home_extends {
   output $INTERNAL {
     position 696,1440
   }
   output $HOME {
     position 0,0
+  }
+  exec ~/.scripts/change_wacom_screen.sh eDP-1
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 HDMI-A-1
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}
+
+profile eptm_extends {
+  output $EPTM {
+    position 1920,0
   }
   exec ~/.scripts/change_wacom_screen.sh eDP-1
   exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 HDMI-A-1
@@ -30,6 +51,6 @@ profile random_extends {
     position 0,0
   }
   exec ~/.scripts/change_wacom_screen.sh eDP-1
-  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 DP-2
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1 HDMI-A-1
   exec sleep 2 && ~/.scripts/random_wp.sh
 }

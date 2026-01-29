@@ -20,13 +20,15 @@ fi
 if [ "$#" -eq 2 ]; then
     hyprctl keyword workspace 1, persistent:true, monitor:$1, default:true
     hyprctl dispatch moveworkspacetomonitor "1 $1"
-    for i in $(seq 2 5); do
+    for i in $(seq 1 5); do
+	    echo "Moving workspace $i to monitor $1"
       hyprctl keyword workspace $i, persistent:true, monitor:$1
       hyprctl dispatch moveworkspacetomonitor "$i $1"
     done
     hyprctl keyword workspace $i, persistent:true, monitor:$2, default:true
     hyprctl dispatch moveworkspacetomonitor "6 $2"
-    for i in $(seq 7 10); do
+    for i in $(seq 6 10); do
+	echo "Moving workspace $i to monitor 2"
       hyprctl keyword workspace $i, persistent:true, monitor:$2
       hyprctl dispatch moveworkspacetomonitor "$i $2"
     done

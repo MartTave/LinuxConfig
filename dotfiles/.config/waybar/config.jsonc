@@ -61,6 +61,7 @@
     },
     "custom/tlp": {
       "format": "{} ",
+      "tooltip": false,
       "exec": "/home/marttave/LinuxConfig/dotfiles/.scripts/detect_power_profile.sh",
       "interval": 20,
       "min-length": 5,
@@ -146,11 +147,12 @@
       "min-length": 3,
     },
     "battery": {
-      "format": "{icon} ",
-      "format-charging": "",
-      "format-icons": ["", "", "", "", ""],
+      "format": " {icon}",
+      "format-charging": "󱐋{icon}",
+      "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
       "min-length": 1,
       "tooltip": true,
+      "tooltip-format": "{timeTo}\nDrawing {power} W",
       "interval": 20,
       "states": {
         "good": 70,

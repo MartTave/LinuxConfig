@@ -1,8 +1,10 @@
 res=$(tlp-stat -m)
 
-if [[ "$res" == battery* ]]; then
+if [[ "$res" == power-saver/SAV ]]; then
   echo ""
-elif [[ "$res" == AC* ]]; then
+elif [[ "$res" == balanced/BAT ]]; then
+  echo ""
+elif [[ "$res" == performance/AC ]]; then
   echo "󱐋"
 else
   echo ""

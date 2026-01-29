@@ -83,7 +83,11 @@ alias open="xdg-open"
 alias zed="zeditor"
 alias ls='ls --color'
 alias s="kitten ssh"
+alias monitor-reset="pkill kanshi && hyprctl dispatch exec kanshi"
 
 export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
 
 eval "$(zoxide init zsh)"
+
+# Swift install
+. "/home/marttave/.local/share/swiftly/env.sh"
