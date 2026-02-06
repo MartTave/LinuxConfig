@@ -6,10 +6,10 @@
 
 include ~/.config/kanshi/switch
 
-output "Lenovo Group Limited 0x8AB1 Unknown" {
-  mode 3072x1920@60
-  scale 1.5
-  alias $INTERNAL
+output eDP-1 {
+  mode 1920x1080@144
+  scale 1.0
+  alias $HOME_INTERAL
 }
 
 
@@ -40,6 +40,15 @@ output "Philips Consumer Electronics Company PHILIPS FTV 0x01010101" {
 
 profile nomad {
   output $INTERNAL {
+    position 0,0
+  }
+  exec ~/.scripts/change_wacom_screen.sh eDP-1
+  exec ~/.scripts/move_workspaces_to_screen.sh eDP-1
+  exec sleep 2 && ~/.scripts/random_wp.sh
+}
+
+profile home_nomad {
+  output $HOME_INTERAL {
     position 0,0
   }
   exec ~/.scripts/change_wacom_screen.sh eDP-1
