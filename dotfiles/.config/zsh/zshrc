@@ -81,7 +81,7 @@ source <(fzf --zsh)
 alias lg="git log --all  --decorate --oneline --graph"
 alias open="xdg-open"
 alias zed="zeditor"
-alias ls='ls --color'
+alias ls='ls --color -al'
 alias s="kitten ssh"
 alias monitor-reset="pkill kanshi && hyprctl dispatch exec kanshi"
 
