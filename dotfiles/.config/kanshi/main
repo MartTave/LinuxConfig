@@ -1,0 +1,7 @@
+output "Samsung Electric Company LC34G55T H4ZRB02457" {
+  mode 3440x1440@165
+  # Screen sharing mode
+  # mode 1720x1440@164.97Hz
+  scale 1.0
+  alias $HOME
+}

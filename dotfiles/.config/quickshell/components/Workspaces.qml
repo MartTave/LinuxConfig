@@ -30,11 +30,7 @@ Base {
         Repeater {
             model: root.hyp.normalWp
 
-            delegate: Loader {
-
-                active: {modelData.id > 0}
-
-                sourceComponent: Text {
+            delegate: Text {
                     color: {
                         if (modelData.focused) {
                             "#f38ba8"
@@ -45,10 +41,10 @@ Base {
                             QsServices.Constants.fontDisabledColor
                         }
                     }
+                    anchors.verticalCenter: parent.verticalCenter
                     font.pixelSize: root.fontSize
                     font.bold: true
                     text: modelData.name.padStart(2, " ")
-                }
             }
         }
     }

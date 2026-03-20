@@ -15,13 +15,13 @@ Base {
             color: root.fontColor
             font.pixelSize: root.iconSize
             anchors.verticalCenter: parent.verticalCenter
-            anchors.verticalCenterOffset: -2
             text: "󰘚"
         }
 
         Text {
             font.family: root.fontFamily
             font.pixelSize: root.fontSize
+            anchors.verticalCenter: parent.verticalCenter
             color: root.fontColor
             text: {
                 return Math.round(root.sm.cpu).toString().padStart(3, " ") + "%";
