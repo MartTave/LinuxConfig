@@ -2,7 +2,6 @@ import QtQuick
 import Quickshell
 
 import "./Base.qml"
-import "./Constants.qml"
 import "../services" as QsServices
 
 Base {

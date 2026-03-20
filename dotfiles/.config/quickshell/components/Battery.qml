@@ -12,9 +12,9 @@ Base {
     anchors.verticalCenter: parent.verticalCenter
 
     property var batteryIcons: ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    property var batteryChargingIcons: ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-    property int currentBatteryPercentage: Math.floor(UPower.displayDevice.percentage * 100)
-    property int currentBatteryLevel: Math.floor(currentBatteryPercentage / 10)
+    property var batteryChargingIcons: ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", ""]
+    property int currentBatteryPercentage: Math.round(UPower.displayDevice.percentage * 100)
+    property int currentBatteryLevel: Math.round(currentBatteryPercentage / 10)
 
     Row {
         spacing: 5

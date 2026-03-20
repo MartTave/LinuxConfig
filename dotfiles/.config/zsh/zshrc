@@ -40,10 +40,22 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 
-
+# Completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# 4. Group completions by category
+zstyle ':completion:*' group-name ''
+
+# 5. Format the category headers (the "type of completion" part)
+# This will show up as a green "-- category name --" above the items
+zstyle ':completion:*:descriptions' format '%F{green}-- %d --%f'
+
+# 6. Format warning messages when nothing matches
+zstyle ':completion:*:warnings' format '%F{red}-- no matches found --%f'
+zstyle ':completion:*:messages' format '%F{purple}-- %d --%f'
+
 
 autoload -U compinit && compinit
 # source ~/.fzf-tab/fzf-tab.plugin.zsh
@@ -81,9 +93,10 @@ source <(fzf --zsh)
 alias lg="git log --all  --decorate --oneline --graph"
 alias open="xdg-open"
 alias zed="zeditor"
-alias ls='ls --color -al'
+alias ls='ls --color -lh'
 alias s="kitten ssh"
 alias monitor-reset="pkill kanshi && hyprctl dispatch exec kanshi"
+alias bm="bashmount"
 
 export SSH_AUTH_SOCK=$HOME/.bitwarden-ssh-agent.sock
 
